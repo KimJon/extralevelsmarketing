@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing Packages | Extra Levels Marketing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .packages-hero {
+      padding: 5rem 0 4rem;
+      background: linear-gradient(135deg, #fff8f6 0%, #fff3ee 100%);
+      border-bottom: 1px solid #ffe5d8;
+      text-align: center;
+    }
+    .packages-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+    .packages-hero p { font-size: 1.2rem; max-width: 600px; margin: 1rem auto 0; }
+
+    /* Launch Banner */
+    .launch-banner {
+      background: var(--brand-orange);
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    .launch-banner a { color: white; font-weight: 700; text-decoration: underline; }
+
+    /* Packages Grid */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .package-card {
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.5rem;
+      background: var(--bg-white);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+    }
+    .package-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .package-card.featured {
+      border: 2px solid var(--brand-orange);
+      background: #fff8f6;
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: -14px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--brand-orange);
+      color: white;
+      padding: 0.3rem 1.2rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .package-header { margin-bottom: 1.5rem; }
+    .package-name { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .package-desc { color: var(--text-gray); font-size: 0.95rem; }
+    .package-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+      margin: 1.5rem 0;
+    }
+    .price-currency { font-size: 1.2rem; font-weight: 700; color: var(--brand-orange); }
+    .price-amount { font-size: 3rem; font-weight: 800; color: var(--text-dark); line-height: 1; }
+    .price-period { color: var(--text-gray); font-size: 0.9rem; }
+    .price-old { text-decoration: line-through; color: #aaa; font-size: 0.9rem; margin-left: 0.5rem; }
+
+    .package-features {
+      list-style: none;
+      flex: 1;
+      margin-bottom: 2rem;
+    }
+    .package-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.95rem;
+    }
+    .package-features li:last-child { border-bottom: none; }
+    .package-features i {
+      color: var(--brand-orange);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .package-features strong { color: var(--text-dark); }
+
+    /* Launch Special */
+    .launch-section {
+      background: var(--bg-dark);
+      padding: 6rem 0;
+      color: white;
+    }
+    .launch-section h2 { color: white; }
+    .launch-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .launch-offer-card {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      text-align: center;
+    }
+    .launch-offer-card h3 { color: var(--text-dark); font-size: 2rem; margin-bottom: 0.5rem; }
+    .launch-date-badge {
+      display: inline-block;
+      background: var(--brand-orange);
+      color: white;
+      padding: 0.4rem 1.2rem;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+    .launch-big-price { font-size: 4rem; font-weight: 800; color: var(--brand-orange); line-height: 1; }
+    .launch-big-price span { font-size: 1.5rem; }
+    .launch-original-price { text-decoration: line-through; color: #aaa; font-size: 1.1rem; }
+    .launch-offer-card p { margin: 1rem 0 1.5rem; color: var(--text-gray); }
+    .countdown-box {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .countdown-unit {
+      background: var(--bg-dark);
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      min-width: 60px;
+      text-align: center;
+    }
+    .countdown-num { font-size: 2rem; font-weight: 800; display: block; line-height: 1; }
+    .countdown-label { font-size: 0.7rem; opacity: 0.7; display: block; margin-top: 4px; }
+
+    .launch-features-list { list-style: none; text-align: left; }
+    .launch-features-list li {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .launch-features-list i { color: var(--brand-orange); font-size: 1.2rem; flex-shrink: 0; }
+    .launch-features-list p { color: rgba(255,255,255,0.8); margin: 0; font-size: 0.95rem; }
+    .launch-features-list strong { color: white; display: block; }
+
+    /* Pre-book section */
+    .prebook-form {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 3rem;
+    }
+    .prebook-form h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .prebook-form p { margin-bottom: 2rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Launch Day Top Bar -->
+  <div class="launch-banner">
+    <div class="container">
+      🚀 <strong>LAUNCH DAY OFFER:</strong> Get your business website built &amp; hosted for only <strong>Ksh 8,999</strong> — Friday Only! &nbsp;
+      <a href="#launch-offer">Pre-Book Your Slot →</a>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" style="top: 44px;">
+    <div class="container navbar-container">
+      <a href="index.html"><img src="logo.jpeg" alt="Extra Levels Marketing" class="logo-img"></a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="packages.html" class="nav-link active">Packages</a></li>
+        <li><a href="event.html" class="nav-link">Event</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary">Book Discovery Call</a>
+    </div>
+  </nav>
+
+  <div style="height: 44px;"></div>
+
+  <!-- Page Hero -->
+  <header class="packages-hero">
+    <div class="container">
+      <h1>Marketing Packages</h1>
+      <p>Transparent, results-driven packages built for businesses of all sizes. Choose the plan that fits your goals.</p>
+    </div>
+  </header>
+
+  <!-- Main Packages Section -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Monthly Retainer Plans</h2>
+        <div class="title-underline"></div>
+        <p class="section-desc">All packages include a dedicated account manager and monthly performance reports.</p>
+      </div>
+
+      <div class="packages-grid">
+
+        <!-- Starter: Social Media -->
+        <div class="package-card">
+          <div class="package-header">
+            <div class="package-name">📱 Social Media Starter</div>
+            <div class="package-desc">Perfect for SMEs launching their digital presence on TikTok, Facebook & Instagram.</div>
+          </div>
+          <div class="package-price">
+            <span class="price-currency">Ksh</span>
+            <span class="price-amount">5,000</span>
+            <span class="price-period">/ month</span>
+          </div>
+          <ul class="package-features">
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>15–20 Short-Form Videos</strong> per month (TikTok, Reels &amp; Facebook)</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>3 Platforms:</strong> TikTok, Facebook &amp; Instagram</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>Platform Posting & Scheduling</strong> — we post for you, on time</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>Basic Graphic Posts</strong> (4–6 branded image posts/month)</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>Captions & Hashtag Research</strong> — optimised for reach</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>Community Management</strong> — comments &amp; DM responses</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>Monthly Analytics Report</strong> — follower growth &amp; reach</span></li>
+            <li><i class="ph ph-x-circle-fill" style="color:#e0e0e0;"></i><span style="color:#aaa;">Paid Ad Campaigns</span></li>
+            <li><i class="ph ph-x-circle-fill" style="color:#e0e0e0;"></i><span style="color:#aaa;">Professional Photography Shoot</span></li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline" style="width: 100%; text-align: center;">Get Started</a>
+        </div>
+
+        <!-- Growth: Social Media Pro -->
+        <div class="package-card featured">
+          <span class="featured-badge">⭐ Most Popular</span>
+          <div class="package-header">
+            <div class="package-name">🚀 Social Media Growth</div>
+            <div class="package-desc">For businesses ready to scale fast with video content, ads and a strong brand presence.</div>
+          </div>
+          <div class="package-price">
+            <span class="price-currency">Ksh</span>
+            <span class="price-amount">12,000</span>
+            <span class="price-period">/ month</span>
+          </div>
+          <ul class="package-features">
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>25–35 Short-Form Videos</strong> per month (TikTok, Reels &amp; Facebook)</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>4 Platforms:</strong> TikTok, Facebook, Instagram &amp; YouTube Shorts</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>Full Content Calendar</strong> — planned 2 weeks in advance</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>8–10 Branded Graphic Posts</strong> per month</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>1 Monthly Paid Ad Campaign</strong> (Ksh 2,000 ad budget included)</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>Active Community Management</strong> — daily engagement</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>Bi-Weekly Analytics Report</strong> with growth strategy</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>1 Professional Photo/Video Shoot</strong> per month</span></li>
+            <li><i class="ph ph-x-circle-fill" style="color:#e0e0e0;"></i><span style="color:#aaa;">Full Brand Strategy Session</span></li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+        </div>
+
+        <!-- Premium: Full Marketing -->
+        <div class="package-card">
+          <div class="package-header">
+            <div class="package-name">💎 Full Marketing Suite</div>
+            <div class="package-desc">End-to-end marketing for businesses serious about dominating their market.</div>
+          </div>
+          <div class="package-price">
+            <span class="price-currency">Ksh</span>
+            <span class="price-amount">25,000</span>
+            <span class="price-period">/ month</span>
+          </div>
+          <ul class="package-features">
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>Unlimited Video Content</strong> — all platforms</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>All Platforms</strong> + LinkedIn &amp; WhatsApp Broadcast</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>3 Paid Ad Campaigns</strong> (Ksh 7,000 ad budget included)</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>Full Brand Strategy Session</strong> monthly</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>SEO Optimized Blog Posts</strong> (2/month)</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>2 Professional Photo/Video Shoots</strong> per month</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>Email Marketing Campaign</strong> (1/month)</span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>Weekly Analytics &amp; Strategy Call</strong></span></li>
+            <li><i class="ph ph-check-circle-fill"></i><span><strong>Dedicated Account Strategist</strong></span></li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline" style="width: 100%; text-align: center;">Contact for Pricing</a>
+        </div>
+
+      </div>
+
+      <!-- Add-ons -->
+      <div style="margin-top: 4rem; background: var(--bg-light); border-radius: 12px; padding: 3rem; border: 1px solid var(--border-color);">
+        <h3 style="font-size: 1.8rem; margin-bottom: 2rem;">Optional Add-Ons</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <i class="ph ph-camera" style="color: var(--brand-orange); font-size: 1.5rem; flex-shrink: 0;"></i>
+            <div><strong>Extra Photo/Video Shoot</strong><br><span style="color: var(--text-gray);">Ksh 3,000 per session</span></div>
+          </div>
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <i class="ph ph-globe" style="color: var(--brand-orange); font-size: 1.5rem; flex-shrink: 0;"></i>
+            <div><strong>Website Design &amp; Hosting</strong><br><span style="color: var(--text-gray);">From Ksh 15,000 (once-off)</span></div>
+          </div>
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <i class="ph ph-megaphone" style="color: var(--brand-orange); font-size: 1.5rem; flex-shrink: 0;"></i>
+            <div><strong>Boosted Ad Spend</strong><br><span style="color: var(--text-gray);">Any amount, managed by us</span></div>
+          </div>
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <i class="ph ph-bezier-curve" style="color: var(--brand-orange); font-size: 1.5rem; flex-shrink: 0;"></i>
+            <div><strong>Logo &amp; Brand Design</strong><br><span style="color: var(--text-gray);">From Ksh 5,000 (once-off)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Launch Day Offer -->
+  <section class="launch-section" id="launch-offer">
+    <div class="container">
+      <div class="launch-grid">
+        <div>
+          <p style="color: var(--brand-orange); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem;">🎉 Friday Launch Special</p>
+          <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 1.5rem;">Get Your Business Online<br>This Friday. Right Now.</h2>
+          <p style="color: rgba(255,255,255,0.7); font-size: 1.1rem; margin-bottom: 2.5rem;">At our launch event, we're offering an exclusive deal: walk in, and your business website is built, designed, and hosted on the spot — available <strong>only this Friday</strong> and at a price that will never come again.</p>
+          <ul class="launch-features-list">
+            <li><i class="ph ph-check-circle-fill"></i><div><strong>Professional Multi-Page Website</strong><p>Built in real-time at the event. Full design, content and branding.</p></div></li>
+            <li><i class="ph ph-check-circle-fill"></i><div><strong>Hosted Live Immediately</strong><p>Your website goes live before you leave the event. Not a promise, a guarantee.</p></div></li>
+            <li><i class="ph ph-check-circle-fill"></i><div><strong>Free Domain Name (.co.ke or .com)</strong><p>Valued at Ksh 2,500 — included for free.</p></div></li>
+            <li><i class="ph ph-check-circle-fill"></i><div><strong>1 Year Hosting Included</strong><p>No hidden costs. Just your business, live on the web.</p></div></li>
+            <li><i class="ph ph-check-circle-fill"></i><div><strong>WhatsApp &amp; Social Media Integration</strong><p>Click-to-chat buttons and social links built in.</p></div></li>
+          </ul>
+        </div>
+
+        <div class="launch-offer-card">
+          <span class="launch-date-badge">🔥 FRIDAY ONLY — LIMITED SLOTS</span>
+          <h3>Website Launchpad Offer</h3>
+          <div class="launch-big-price"><span>Ksh </span>8,999</div>
+          <div class="launch-original-price">Normal price: Ksh 25,000+</div>
+          <p>You save <strong>over Ksh 16,000</strong>. Only available on launch day, first come, first served.</p>
+
+          <!-- Countdown Timer -->
+          <div class="countdown-box" id="countdown">
+            <div class="countdown-unit"><span class="countdown-num" id="cd-days">0</span><span class="countdown-label">DAYS</span></div>
+            <div class="countdown-unit"><span class="countdown-num" id="cd-hours">0</span><span class="countdown-label">HRS</span></div>
+            <div class="countdown-unit"><span class="countdown-num" id="cd-mins">0</span><span class="countdown-label">MINS</span></div>
+            <div class="countdown-unit"><span class="countdown-num" id="cd-secs">0</span><span class="countdown-label">SECS</span></div>
+          </div>
+
+          <a href="#prebook" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Pre-Book My Website Slot</a>
+          <p style="font-size: 0.8rem; color: #aaa;">No payment needed now. Secure your slot for free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pre-Book Section -->
+  <section class="section bg-light" id="prebook">
+    <div class="container" style="max-width: 800px;">
+      <div class="section-header">
+        <h2 class="section-title">Pre-Book Your Website Slot</h2>
+        <div class="title-underline"></div>
+        <p class="section-desc">Secure your slot for the Ksh 8,999 launch day website offer. Slots are strictly limited — first come, first served.</p>
+      </div>
+
+      <div class="prebook-form">
+        <h3>Reserve My Slot</h3>
+        <p style="color: var(--text-gray);">Fill in your details below. We'll confirm your slot via WhatsApp within 24 hours.</p>
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label class="form-label" for="pb-name">Full Name / Business Name</label>
+            <input type="text" id="pb-name" class="form-control" placeholder="e.g. Jane Doe / Doe Enterprises" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="pb-phone">WhatsApp Number</label>
+            <input type="tel" id="pb-phone" class="form-control" placeholder="07XX XXX XXX" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="pb-industry">Your Business / Industry</label>
+            <input type="text" id="pb-industry" class="form-control" placeholder="e.g. Clothing Shop, Law Firm, Hotel" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="pb-notes">Any specific website needs? (optional)</label>
+            <textarea id="pb-notes" class="form-control" rows="3" placeholder="e.g. I sell clothes online and need an Instagram link, contact form and gallery..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">🚀 Confirm My Pre-Booking</button>
+          <p style="font-size: 0.85rem; text-align: center; margin-top: 1rem; color: var(--text-gray);">By submitting you agree to attend the event on Friday and pay Ksh 8,999 at the venue.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Not Sure Which Package to Choose?</h2>
+      <p>Talk to us. We'll recommend the best plan for your budget and goals — no strings attached.</p>
+      <a href="contact.html" class="btn btn-primary btn-lg">Book a Free Discovery Call</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="logo.jpeg" alt="Extra Levels Marketing" class="footer-logo">
+          <p>CREATE. ELEVATE. DELIVER.</p>
+          <div class="social-links">
+            <a href="#"><i class="ph-fill ph-facebook-logo"></i></a>
+            <a href="#"><i class="ph-fill ph-instagram-logo"></i></a>
+            <a href="#"><i class="ph-fill ph-tiktok-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="event.html">Event</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>Maralal Town, Samburu County</li>
+            <li>0703 393 126 / 0703 267 865</li>
+            <li>extralevelsmarketing@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Extra Levels Marketing. All rights reserved.</p>
+        <p>Strategic Marketing. Measurable Growth.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Countdown to next Friday
+    function getNextFriday() {
+      const now = new Date();
+      const day = now.getDay();
+      const daysUntilFriday = (5 - day + 7) % 7 || 7;
+      const friday = new Date(now);
+      friday.setDate(now.getDate() + daysUntilFriday);
+      friday.setHours(8, 0, 0, 0);
+      return friday;
+    }
+
+    function updateCountdown() {
+      const target = getNextFriday();
+      const now = new Date();
+      const diff = target - now;
+      if (diff <= 0) return;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+      document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>

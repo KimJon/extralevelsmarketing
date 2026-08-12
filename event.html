@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maralal Connect Business Dinner | Extra Levels Marketing</title>
+  <meta name="description" content="Join the Maralal Connect Business Dinner — exclusive networking for 50 SMEs at New Seasons Hotel, Maralal. Flat rate Ksh 1,500.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Event Hero */
+    .event-hero {
+      background: var(--bg-dark);
+      color: white;
+      padding: 6rem 0 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .event-hero::before {
+      content:'';
+      position:absolute; inset:0;
+      background: radial-gradient(ellipse at center, rgba(255,87,34,.15), transparent 70%);
+    }
+    .event-hero .container { position:relative; z-index:1; }
+    .event-hero .el-presents {
+      font-size:.9rem; letter-spacing:.1em; text-transform:uppercase;
+      color:rgba(255,255,255,.6); margin-bottom:1rem;
+    }
+    .event-hero h1 { font-size:clamp(2.5rem,6vw,5rem); color:white; line-height:1.05; margin-bottom:.5rem; }
+    .event-hero h1 span { color:var(--brand-orange); }
+    .event-hero h2 {
+      font-size:clamp(1.5rem,3vw,2.5rem); color:white; font-weight:800;
+      letter-spacing:.1em; text-transform:uppercase; margin-bottom:2rem;
+    }
+    .event-meta {
+      display:flex; justify-content:center; flex-wrap:wrap;
+      gap:1.5rem; margin-bottom:2.5rem;
+    }
+    .event-meta-item {
+      display:flex; align-items:center; gap:.6rem;
+      font-size:1rem; color:rgba(255,255,255,.85);
+      background:rgba(255,255,255,.08); padding:.5rem 1rem; border-radius:100px;
+    }
+    .event-meta-item i { color:var(--brand-orange); }
+    .slots-badge {
+      display:inline-block; background:var(--brand-orange); color:white;
+      padding:.6rem 2rem; border-radius:100px; font-weight:700; font-size:1rem;
+      margin-bottom:2.5rem;
+    }
+
+    /* Ticket — flat rate single card */
+    .ticket-featured {
+      max-width: 560px;
+      margin: 0 auto;
+      border: 2px solid var(--brand-orange);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .ticket-top {
+      padding: 2.5rem;
+      background: var(--brand-orange);
+      text-align: center;
+      color: white;
+    }
+    .ticket-top h3 { font-size:1.8rem; color:white; margin-bottom:.5rem; }
+    .ticket-top .ticket-tagline { color:rgba(255,255,255,.85); margin-bottom:1rem; }
+    .ticket-price { font-size:4rem; font-weight:800; color:white; line-height:1; }
+    .ticket-price span { font-size:1.5rem; }
+    .ticket-per { color:rgba(255,255,255,.8); font-size:.95rem; }
+    .ticket-body {
+      padding:2.5rem;
+      background:white;
+    }
+    .ticket-features { list-style:none; margin-bottom:2rem; }
+    .ticket-features li {
+      display:flex; align-items:center; gap:.75rem;
+      padding:.6rem 0; border-bottom:1px solid var(--border-color); font-size:.95rem;
+    }
+    .ticket-features li:last-child { border:none; }
+    .ticket-features i { color:var(--brand-orange); font-size:1.2rem; }
+
+    /* Payment section */
+    .payment-instructions {
+      background:#fff8f6; border:1px solid rgba(255,87,34,.2); border-radius:12px;
+      padding:1.75rem; margin-bottom:2rem;
+    }
+    .payment-instructions h4 { font-size:1.1rem; margin-bottom:1rem; }
+    .mpesa-detail {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:.6rem 0; border-bottom:1px solid rgba(255,87,34,.15);
+      font-size:1rem;
+    }
+    .mpesa-detail:last-child { border:none; }
+    .mpesa-detail span { color:var(--text-gray); }
+    .mpesa-detail strong { color:var(--text-dark); font-size:1.1rem; }
+
+    /* Dress Code */
+    .dress-section {
+      background:var(--bg-dark); padding:5rem 0;
+    }
+    .dress-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-top:3rem; }
+    .dress-card {
+      background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);
+      border-radius:12px; padding:2.5rem; text-align:center;
+    }
+    .dress-card h3 { color:white; margin-bottom:1.5rem; font-size:1.4rem; }
+    .dress-card ul { list-style:none; }
+    .dress-card ul li {
+      padding:.6rem 0; border-bottom:1px solid rgba(255,255,255,.07);
+      color:rgba(255,255,255,.8); display:flex; align-items:center; gap:.7rem;
+    }
+    .dress-card ul li:last-child { border:none; }
+    .dress-card ul li i { color:var(--brand-orange); }
+    .dress-note {
+      text-align:center; margin-top:2.5rem; padding:1.75rem;
+      border:1px solid rgba(255,87,34,.3); border-radius:8px;
+      background:rgba(255,87,34,.05);
+    }
+    .dress-note p { color:rgba(255,255,255,.8); }
+    .dress-note strong { color:var(--brand-orange); }
+
+    @media(max-width:768px){ .dress-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+  <!-- Top Banner -->
+  <div class="launch-banner">
+    🚀 <strong>EL LAUNCH EVENT — THIS FRIDAY!</strong> &nbsp; Website built &amp; hosted live for Ksh 8,999 — <a href="packages.html#launch-offer">Pre-Book Now</a>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html"><img src="logo.jpeg" alt="Extra Levels Marketing" class="logo-img"></a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="packages.html" class="nav-link">Packages</a></li>
+        <li><a href="event.html" class="nav-link active">Event</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#buy-tickets" class="btn btn-primary">Buy Ticket</a>
+    </div>
+  </nav>
+
+  <!-- Event Hero -->
+  <header class="event-hero">
+    <div class="container">
+      <p class="el-presents">Extra Levels Marketing — Presents</p>
+      <h1><span>Maralal Connect</span></h1>
+      <h2>Business Dinner</h2>
+      <div class="slots-badge">⚡ Limited — 50 SMEs Only. First Come, First Served.</div>
+      <div class="event-meta">
+        <div class="event-meta-item"><i class="ph ph-calendar"></i> Friday, August 15, 2026</div>
+        <div class="event-meta-item"><i class="ph ph-clock"></i> From 6:00 PM</div>
+        <div class="event-meta-item"><i class="ph ph-map-pin"></i> New Seasons Hotel, Maralal</div>
+        <div class="event-meta-item"><i class="ph ph-ticket"></i> Ksh 1,500 per person</div>
+      </div>
+      <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+        <a href="#buy-tickets" class="btn btn-primary btn-lg">Get My Ticket — Ksh 1,500</a>
+        <a href="#about-event" class="btn btn-lg" style="color:white;border-color:rgba(255,255,255,.3);background:transparent;">Learn More</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Event -->
+  <section class="section bg-white" id="about-event">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;" class="reveal-up">
+        <div>
+          <h2 style="font-size:2.5rem;margin-bottom:1.5rem;">You Are Invited</h2>
+          <p style="font-size:1.1rem;margin-bottom:1.25rem;">Join us at the Maralal Connect Business Dinner — an exclusive gathering where local and regional business leaders come together to <strong>connect, collaborate and grow</strong>.</p>
+          <p style="margin-bottom:1.25rem;">This is not just a dinner. It's a curated networking experience designed to foster real business relationships, create partnerships, and inspire growth for every SME in Samburu County and beyond.</p>
+          <p style="font-style:italic;font-size:1.1rem;color:var(--text-dark);border-left:4px solid var(--brand-orange);padding-left:1.5rem;">"Let's come together, connect, collaborate and grow."</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+          <div style="padding:2rem;background:var(--bg-light);border-radius:8px;border:1px solid var(--border-color);text-align:center;">
+            <div style="font-size:3rem;font-weight:800;color:var(--brand-orange);">50</div>
+            <div style="font-weight:700;">SME Slots Only</div>
+          </div>
+          <div style="padding:2rem;background:var(--bg-light);border-radius:8px;border:1px solid var(--border-color);text-align:center;">
+            <div style="font-size:3rem;font-weight:800;color:var(--brand-orange);">1,500</div>
+            <div style="font-weight:700;">Flat Rate (Ksh)</div>
+          </div>
+          <div style="padding:2rem;background:var(--bg-light);border-radius:8px;border:1px solid var(--border-color);text-align:center;">
+            <div style="font-size:3rem;font-weight:800;color:var(--brand-orange);">∞</div>
+            <div style="font-weight:700;">Connections</div>
+          </div>
+          <div style="padding:2rem;background:var(--bg-dark);border-radius:8px;text-align:center;">
+            <div style="font-size:1.1rem;font-weight:800;color:var(--brand-orange);">New Seasons Hotel</div>
+            <div style="color:rgba(255,255,255,.7);font-size:.9rem;margin-top:.25rem;">Maralal Town</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ticket Purchase -->
+  <section class="section bg-light" id="buy-tickets">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <h2 class="section-title">Purchase Your Ticket</h2>
+        <div class="title-underline"></div>
+        <p class="section-desc">One flat rate for everyone. Secure your seat — only 50 spots available.</p>
+      </div>
+
+      <div class="ticket-featured reveal-up">
+        <div class="ticket-top">
+          <h3>🎟️ Dinner Ticket</h3>
+          <p class="ticket-tagline">Maralal Connect Business Dinner — Smart &amp; Elegant</p>
+          <div class="ticket-price"><span>Ksh </span>1,500</div>
+          <p class="ticket-per">per person — flat rate for all attendees</p>
+        </div>
+        <div class="ticket-body">
+          <ul class="ticket-features">
+            <li><i class="ph ph-check-circle-fill"></i> Full dinner at New Seasons Hotel, Maralal</li>
+            <li><i class="ph ph-check-circle-fill"></i> Exclusive networking with 50 SME owners</li>
+            <li><i class="ph ph-check-circle-fill"></i> Access to all sessions &amp; presentations</li>
+            <li><i class="ph ph-check-circle-fill"></i> Business directory listing for the night</li>
+            <li><i class="ph ph-check-circle-fill"></i> Invitation to EL launch event &amp; website offer</li>
+          </ul>
+
+          <!-- M-Pesa Payment Instructions -->
+          <div class="payment-instructions">
+            <h4>💳 Payment via M-Pesa</h4>
+            <div class="mpesa-detail"><span>Method</span><strong>Lipa na M-Pesa (Buy Goods &amp; Services)</strong></div>
+            <div class="mpesa-detail"><span>Till Number</span><strong>5663919</strong></div>
+            <div class="mpesa-detail"><span>Business Name</span><strong>Samburu ICT Centre</strong></div>
+            <div class="mpesa-detail"><span>Amount</span><strong>Ksh 1,500 per person</strong></div>
+          </div>
+
+          <p style="font-size:.9rem;color:var(--text-gray);margin-bottom:1.5rem;">
+            After payment, fill in the registration form below and send your M-Pesa screenshot to <strong>0703 393 126</strong> on WhatsApp to confirm your seat.
+          </p>
+
+          <form id="ticket-form" action="#" method="POST">
+            <div class="form-group">
+              <label class="form-label" for="t-name">Full Name</label>
+              <input type="text" id="t-name" class="form-control" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="t-phone">WhatsApp Number</label>
+              <input type="tel" id="t-phone" class="form-control" placeholder="07XX XXX XXX" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="t-business">Business Name</label>
+              <input type="text" id="t-business" class="form-control" placeholder="Your business name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="t-guests">Number of Seats</label>
+              <select id="t-guests" class="form-control" required>
+                <option value="1">1 Seat — Ksh 1,500</option>
+                <option value="2">2 Seats — Ksh 3,000</option>
+                <option value="3">3 Seats — Ksh 4,500</option>
+                <option value="4">4 Seats — Ksh 6,000</option>
+                <option value="5">5 Seats — Ksh 7,500</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;" id="ticket-submit">🎟️ Confirm Registration</button>
+          </form>
+
+          <div id="ticket-success" class="hidden" style="text-align:center;padding:2rem 0;">
+            <p style="font-size:1.1rem;color:var(--text-dark);margin-bottom:1.5rem;">
+              ✅ <strong>Registration received!</strong><br><br>
+              Please complete payment via M-Pesa:<br>
+              <strong>Till: 5663919 | Samburu ICT Centre</strong><br>
+              Then send the payment screenshot to confirm your seat.
+            </p>
+            <a href="https://wa.me/254703393126?text=Hi!%20I%20have%20registered%20and%20made%20payment%20for%20the%20Maralal%20Connect%20Business%20Dinner.%20Please%20confirm%20my%20seat."
+               class="btn btn-primary btn-lg" style="background:#25D366;border-color:#25D366;" target="_blank">
+              📲 Send Screenshot on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dress Code -->
+  <section class="dress-section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:1rem;">
+        <p style="color:var(--brand-orange);font-weight:700;letter-spacing:.1em;text-transform:uppercase;">Dress Code</p>
+        <h2 style="color:white;font-size:clamp(2rem,4vw,3rem);">Smart &amp; Elegant</h2>
+        <p style="color:rgba(255,255,255,.6);margin-top:1rem;">"Let's dress to impress, connect &amp; inspire."<br>Your appearance reflects your professionalism and respect for the event.</p>
+      </div>
+      <div class="dress-grid">
+        <div class="dress-card">
+          <h3>🤵 Gentlemen</h3>
+          <ul>
+            <li><i class="ph ph-check-circle-fill"></i> Suit or Blazer with Collared Shirt</li>
+            <li><i class="ph ph-check-circle-fill"></i> Dress Trousers</li>
+            <li><i class="ph ph-check-circle-fill"></i> Closed Dress Shoes</li>
+            <li><i class="ph ph-check-circle-fill"></i> Neat &amp; Well Groomed</li>
+          </ul>
+        </div>
+        <div class="dress-card">
+          <h3>👗 Ladies</h3>
+          <ul>
+            <li><i class="ph ph-check-circle-fill"></i> Elegant Dress, Skirt or Jumpsuit</li>
+            <li><i class="ph ph-check-circle-fill"></i> Classy &amp; Comfortable Footwear</li>
+            <li><i class="ph ph-check-circle-fill"></i> Refined Accessories</li>
+            <li><i class="ph ph-check-circle-fill"></i> Neat &amp; Well Groomed</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dress-note">
+        <p><strong>Great Connections. Stronger Businesses. Bigger Impact.</strong></p>
+        <p style="margin-top:.5rem;">For enquiries &amp; RSVP: <strong>info@extralevelsmarketing.co.ke</strong> | <strong>0703 393 126</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Also happening this Friday</h2>
+      <p>Get your business website built and hosted live at the event for only Ksh 8,999.</p>
+      <a href="packages.html#launch-offer" class="btn btn-primary btn-lg">Pre-Book Website Slot</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="logo.jpeg" alt="Extra Levels Marketing" class="footer-logo">
+          <p>CREATE. ELEVATE. DELIVER.</p>
+          <div class="social-links">
+            <a href="#"><i class="ph-fill ph-facebook-logo"></i></a>
+            <a href="#"><i class="ph-fill ph-instagram-logo"></i></a>
+            <a href="#"><i class="ph-fill ph-tiktok-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="event.html">Event</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li>Maralal Town, Samburu County</li>
+            <li>0703 393 126 / 0703 267 865</li>
+            <li>extralevelsmarketing@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Extra Levels Marketing. All rights reserved.</p>
+        <p>Strategic Marketing. Measurable Growth.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Handle ticket form submission
+    document.getElementById("ticket-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      this.classList.add("hidden");
+      document.getElementById("ticket-success").classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>
