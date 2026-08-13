@@ -4,7 +4,7 @@
  */
 
 // ─── WhatsApp Config ──────────────────────────────────────
-const WA_NUMBER = "254703393126"; // EL WhatsApp number (no +)
+const WA_NUMBER = "254792465156"; // EL WhatsApp number (no +)
 const WA_MESSAGES = [
   { label: "📦 Enquire About Packages", text: "Hi! I'd like to know more about your marketing packages." },
   { label: "🌐 Website Launchpad Offer", text: "Hi! I want to pre-book the Ksh 8,999 website launch offer." },
@@ -97,9 +97,9 @@ function buildEventPopup() {
             <span>Till Number:</span> <strong>5663919</strong><br>
             <span>Account Name:</span> <strong>Samburu ICT Centre</strong>
           </div>
-          Then send your payment screenshot to <strong>0703 393 126</strong> on WhatsApp to confirm your seat.
+          Then send your payment screenshot to <strong>0792 465 156</strong> on WhatsApp to confirm your seat.
         </div>
-        <a href="https://wa.me/254703393126?text=${encodeURIComponent("Hi! I've registered for the Maralal Connect Business Dinner and made payment. Please confirm my seat.")}"
+        <a href="https://wa.me/254792465156?text=${encodeURIComponent("Hi! I've registered for the Maralal Connect Business Dinner and made payment. Please confirm my seat.")}"
            class="popup-wa-btn" target="_blank">
           📲 Send Screenshot on WhatsApp
         </a>
