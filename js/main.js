@@ -97,7 +97,7 @@ function buildEventPopup() {
             <span>Till Number:</span> <strong>5663919</strong><br>
             <span>Account Name:</span> <strong>Samburu ICT Centre</strong>
           </div>
-          Then send your payment screenshot to <strong>0792 465 156</strong> on WhatsApp to confirm your seat.
+          Then send your payment screenshot to <strong>0703 393 126</strong> on WhatsApp to confirm your seat.
         </div>
         <a href="https://wa.me/254792465156?text=${encodeURIComponent("Hi! I've registered for the Maralal Connect Business Dinner and made payment. Please confirm my seat.")}"
            class="popup-wa-btn" target="_blank">
