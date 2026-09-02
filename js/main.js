@@ -233,12 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initNavbar();
   initReveal();
 
-  // Show popup after 2.5s (first visit only)
-  if (!sessionStorage.getItem("el_popup_done")) {
-    setTimeout(buildEventPopup, 2500);
-  } else if (!sessionStorage.getItem("el_sidebar_done")) {
-    setTimeout(showLaunchSidebar, 1000);
-  }
+  // Event is over - popups disabled
 
   // Countdown — used on packages page
   startCountdown({ days: "cd-days", hours: "cd-hours", mins: "cd-mins", secs: "cd-secs" });
